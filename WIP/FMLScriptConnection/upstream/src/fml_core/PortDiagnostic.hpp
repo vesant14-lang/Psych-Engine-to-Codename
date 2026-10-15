@@ -1,18 +1,6 @@
-// fml_core — El pendiente de un porteo, como dato.
-//
-// Un import que falla a medias tiene DOS salidas posibles: callarse y entregar
-// un resultado incompleto que parece completo, o decir exactamente que falto,
-// donde estaba escrito y que se puede hacer al respecto. Este tipo es la
-// segunda, y existe aparte de `Diagnostic` porque no es lo mismo:
-// `Diagnostic` describe un archivo roto; esto describe **trabajo que queda**.
-//
-// Las tres cosas que lo hacen util y que ninguna puede faltar:
-//   - `path` + `line` apuntan al ORIGINAL, no al archivo generado. Quien mira
-//     esto quiere abrir el Lua del mod, no el HScript que salio de el.
-//   - `affected` dice a quien deja sin servicio. Un pendiente que no nombra lo
-//     que rompe no se puede priorizar.
-//   - `resolution` dice que puede hacer el usuario. Un pendiente sin salida es
-//     una queja.
+// fml_core
+//Archivo por Eluri14
+
 #pragma once
 
 #include <string>
@@ -45,9 +33,7 @@ inline const char* toString(PortCause cause) {
     return "unknown";
 }
 
-// Que puede hacer el usuario. `None` es legitimo -hay pendientes sin salida
-// todavia- pero tiene que ser una eleccion, no el valor al que se cae por
-// olvido.
+
 enum class PortResolution {
     None,
     PickFile,        // elegir el archivo o la carpeta que falta
