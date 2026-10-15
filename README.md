@@ -1,10 +1,64 @@
 # Psych Importer
 
+![Version 1.0.1](https://img.shields.io/badge/version-1.0.1-2563eb)
+![Windows 10 / 11 x64](https://img.shields.io/badge/Windows-10%20%2F%2011%20x64-0078D4)
+![C++](https://img.shields.io/badge/source-C%2B%2B-00599C)
+[![License MIT](https://img.shields.io/badge/license-MIT-22c55e)](LICENSE)
+![English and Spanish](https://img.shields.io/badge/interface-EN%20%2F%20ES-8b5cf6)
+![Target Codename Engine 1.0.1](https://img.shields.io/badge/Codename%20Engine-1.0.1-f59e0b)
+
+**Psych Engine → Codename Engine · Inspect, select, review, export.**
+
 Bring characters, songs, stages and icons from Psych Engine into Codename Engine. Inspect what was found, choose what to export, and review the conversion report before creating a folder or ZIP.
 
 Psych Importer is a standalone tool from Funkin Mod Lab (FML). It shares FML's format readers, scene rendering, atlas support and audio code. You can use the Windows build without installing FML, Psych Engine or a separate runtime.
 
 Version 1.0.1 | Windows 10 / 11, x64 | English and Spanish interface | MIT license
+
+[Quick start](#your-first-export) · [Screenshots](#screenshots) · [Features](#what-you-can-inspect) · [Export formats](#choose-how-to-package-the-result) · [CLI](#command-line) · [Build](#build-and-contribute) · [Limitations](#compatibility-and-current-limits)
+
+![Mario's Madness — Its a me in Psych Importer's scene preview](docs/images/marios-madness-preview.png)
+
+*Real application capture: Mario's Madness v2.0.1, “Its a me”, normal difficulty. Preview is an inspection tool; custom mechanics still require testing in Codename.*
+
+## Screenshots
+
+These captures were produced by the Windows 1.0.1 application using **Wii Funkin' - VS Matt** and **Mario's Madness v2.0.1** as local sources. They show resource discovery and inspection, not a claim that either complete mod converts without manual work. No mod assets are bundled with this Developer package beyond the illustrative screenshots.
+
+### Wii Funkin' - VS Matt
+
+![VS Matt — scene composition and playback controls](docs/images/vs-matt-preview.png)
+
+*Inspect the song scene, selected difficulty, camera settings and audio timeline in Preview.*
+
+| Character inspection | Chart inspection |
+|---|---|
+| ![Matt animation preview and import settings](docs/images/vs-matt-character.png) | ![VS Matt chart inspector and export dependencies](docs/images/vs-matt-charts.png) |
+| Review animations, atlas paths and export settings. | Inspect chart structure and character/stage dependencies. Charts are read-only. |
+
+### Mario's Madness v2.0.1
+
+| Character inspection | Song and audio inspection |
+|---|---|
+| ![Mario's Madness character animation preview](docs/images/marios-madness-character.png) | ![Its a me difficulty, audio and song dependencies](docs/images/marios-madness-songs.png) |
+| Inspect a character before choosing what to export. | Check the difficulty, resolved instrumental, vocals and required assets. |
+
+### More of the workflow
+
+The following views use both mods to show the tabs and export options that are not visible above.
+
+| Wii Funkin' - VS Matt | Mario's Madness v2.0.1 |
+|---|---|
+| ![VS Matt resource manager inspecting an image](docs/images/vs-matt-resources.png) | ![Mario's Madness resource manager inspecting an image](docs/images/marios-madness-resources.png) |
+| **Resources:** discovered files, their uses and export readiness. | **Resources:** filter images or audio and inspect a selected file. |
+| ![VS Matt stage and objects](docs/images/vs-matt-stage.png) | ![Mario's Madness stage and objects](docs/images/marios-madness-stage.png) |
+| **Stages:** recovered scenery and object settings. | **Stages:** stage layers, timing and import options. |
+| ![Matt health icon states](docs/images/vs-matt-icons.png) | ![Mario's Madness health icon states](docs/images/marios-madness-icons.png) |
+| **Icons:** inspect health states and export a state as PNG. | **Icons:** preview normal and losing states. |
+| ![VS Matt batch export options](docs/images/vs-matt-export.png) | ![Mario's Madness batch export options](docs/images/marios-madness-export.png) |
+| **Export:** choose dependencies, modcharts and folder or ZIP packaging. | **Export:** review the selected items before preparing the plan. |
+
+Mod artwork, music and characters belong to their respective creators and rights holders. These examples do not imply affiliation or endorsement. See [License and acknowledgements](#license-and-acknowledgements).
 
 ## Start here
 
@@ -12,11 +66,13 @@ Version 1.0.1 | Windows 10 / 11, x64 | English and Spanish interface | MIT licen
 |---|---|
 | Convert assets on Windows | `PsychImporter-1.0.1-Windows-x64.zip` |
 | Build or modify the program | `PsychImporter-1.0.1-Developer.zip` or the source repository |
-| Check the target format and tested versions | [Codename compatibility](CODENAME_COMPATIBILITY.md) |
-| Work on the code | `DEVELOPMENT.md` in the source edition |
-| Explore the unfinished FML script connection | `WIP/FMLScriptConnection/` in the source edition |
+| Check the target format and tested versions | [Codename compatibility](PsychImporterStandalone/CODENAME_COMPATIBILITY.md) |
+| Work on the code | [Developer guide](PsychImporterStandalone/DEVELOPMENT.md) |
+| Explore the unfinished FML script connection | [FML script connection](PsychImporterStandalone/WIP/FMLScriptConnection/) |
 
 Extract the Windows ZIP to a folder and open `PsychImporter.exe`. Keep `SDL3.dll` beside it. Extracting the archive also gives the program a persistent place for its logs.
+
+The updated Windows build opens at about 80% of the primary display's usable area, accounting for the taskbar. It can be resized down to 1000 × 500 on a display large enough for that minimum. On smaller displays, the minimum follows the available area. Use `--size=WIDTHxHEIGHT` when you need a specific starting size.
 
 The interface starts in English. Use ES or EN in the top bar to change language; the choice is saved. The documentation uses the English button names.
 
@@ -141,6 +197,7 @@ PsychImporter.exe --root="C:\Mods\MyPsychMod" --export-batch=my-import --songs=m
 | `--no-modcharts` | Disable modchart conversion. |
 | `--lang=en`, `--lang=es` | Choose the interface and generated guide language. |
 | `--version` | Print the version. |
+| `--size=WIDTHxHEIGHT` | Set the starting window size instead of the automatic 80% size; visible windows are still kept within the usable desktop. |
 | `--readiness=<file>` | Write resource readiness as JSON. |
 | `--modchart-dump=<song>` | Inspect the collected modchart data. |
 | `--logs=<folder>` | Write logs to another folder. |
@@ -149,7 +206,7 @@ If several sources share an identifier, `id@1` selects the second catalog entry.
 
 ## Compatibility and current limits
 
-Codename Engine 1.0.1 is the reference target. See [CODENAME_COMPATIBILITY.md](CODENAME_COMPATIBILITY.md) for the tested contracts, engine checks and limits of that validation.
+Codename Engine 1.0.1 is the reference target. See [CODENAME_COMPATIBILITY.md](PsychImporterStandalone/CODENAME_COMPATIBILITY.md) for the tested contracts, engine checks and limits of that validation.
 
 - Charts is read-only in 1.0.1.
 - Preview has no gameplay HUD in either edition.
@@ -179,10 +236,10 @@ The build finds MSVC through `setup_msvc.bat`. The source edition includes the r
 
 Keep format and rendering fixes in the shared FML core. Keep the standalone's layout and preferences in its frontend. Include a reproducible case, the validation performed and any remaining behavior differences when proposing a change.
 
-Read the [contribution guide](CONTRIBUTING.md), [release history](CHANGELOG.md) and [issue-reporting notes](SECURITY.md) for the repository workflow.
+Read the [contribution guide](PsychImporterStandalone/CONTRIBUTING.md), [release history](PsychImporterStandalone/CHANGELOG.md) and [issue-reporting notes](PsychImporterStandalone/SECURITY.md) for the repository workflow.
 
 ## License and acknowledgements
 
-The tool's original code is available under the [MIT license](LICENSE). Codename Engine and Psych Engine use Apache 2.0; upstream-derived portions retain those terms and attribution. The MIT license does not replace their licenses. Read [third-party notices](THIRD_PARTY_NOTICES.md) for the adaptation scope and included license records.
+The tool's original code is available under the [MIT license](PsychImporterStandalone/LICENSE). Codename Engine and Psych Engine use Apache 2.0; upstream-derived portions retain those terms and attribution. The MIT license does not replace their licenses. Read [third-party notices](PsychImporterStandalone/THIRD_PARTY_NOTICES.md) for the adaptation scope and included license records.
 
 Psych Importer also uses SDL3, Dear ImGui, pugixml, miniz, nlohmann/json, stb and miniaudio. Both editions include the relevant licenses and attribution. Imported mod assets keep their original ownership and permissions.
