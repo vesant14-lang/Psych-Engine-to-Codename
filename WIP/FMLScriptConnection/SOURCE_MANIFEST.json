@@ -1,0 +1,196 @@
+{
+  "schema": 1,
+  "purpose": "Isolated FML script-connection development snapshot; excluded from application build",
+  "sourceRevision": "e30b05344c5bacae465ae19c1bfd35ff8e8283ec",
+  "sourceWorkingTreeDirty": true,
+  "seeds": [
+    "src/fml_formats/PsychBehaviorPlan.cpp",
+    "src/fml_formats/HscriptEmit.cpp",
+    "src/fml_formats/PsychApiCatalog.cpp",
+    "src/fml_formats/PsychCompat.cpp",
+    "src/fml_formats/PsychCompatScript.cpp",
+    "src/fml_formats/PsychSourceBinding.hpp",
+    "src/fml_formats/PsychScriptRelations.hpp",
+    "src/fml_formats/PsychBehaviorSource.hpp",
+    "src/fml_formats/LuaAst.cpp",
+    "src/fml_core/Hash.cpp",
+    "src/fml_io/SafeWrite.cpp"
+  ],
+  "files": [
+    {
+      "path": "src/fml_core/Diagnostics.hpp",
+      "size": 4337,
+      "sha256": "d2a52722e62a531cc94bdc6c3f590f125041e751c2aa6200aa68562f8c074d61"
+    },
+    {
+      "path": "src/fml_core/Hash.cpp",
+      "size": 5324,
+      "sha256": "a1cf082784c167bf65f2520335053ac7869935d76e0c4dfa572c004a17370924"
+    },
+    {
+      "path": "src/fml_core/Hash.hpp",
+      "size": 534,
+      "sha256": "42c766b939e6e50f3b9ffe21474098196db7425e27741af0c0ea1af28447dea2"
+    },
+    {
+      "path": "src/fml_core/Model.hpp",
+      "size": 39579,
+      "sha256": "9406c9fa671063ae2ceca599574b476a91c05259128606bd86c71c3351f626ec"
+    },
+    {
+      "path": "src/fml_core/PortDiagnostic.hpp",
+      "size": 3954,
+      "sha256": "336d88e452e70581e643045654fa6c6700e600058839845e7d98e0ee8217fd6c"
+    },
+    {
+      "path": "src/fml_formats/HscriptEmit.cpp",
+      "size": 98794,
+      "sha256": "914956d7a05bb875203ed6849860db2501c8721a1405c6d963794d2eeccf772d"
+    },
+    {
+      "path": "src/fml_formats/HscriptEmit.hpp",
+      "size": 4902,
+      "sha256": "a73e731dc604b264024f0cdb16b8d73a8a6d214fa612f708cf1b628d08249805"
+    },
+    {
+      "path": "src/fml_formats/LuaAst.cpp",
+      "size": 34417,
+      "sha256": "685947897cb5d4ce0a51283dd2b2245ad801801d2df8dda8312aac6c0eeeb332"
+    },
+    {
+      "path": "src/fml_formats/LuaAst.hpp",
+      "size": 4946,
+      "sha256": "f5119ca7df58db15024676d61b1ebc742be79a5ca58acefa0460250a01c12ba3"
+    },
+    {
+      "path": "src/fml_formats/PsychApiCatalog.cpp",
+      "size": 47508,
+      "sha256": "a923da166df208147aa266f740e0e464549d55386b52d8589043a6a3c7a47b9a"
+    },
+    {
+      "path": "src/fml_formats/PsychApiCatalog.hpp",
+      "size": 5142,
+      "sha256": "8ed9b5cbde0a1a6cd491b002909ac052de7d1a9b19c6e88bcb7b780e034432f2"
+    },
+    {
+      "path": "src/fml_formats/PsychBehaviorPlan.cpp",
+      "size": 15737,
+      "sha256": "2ec3210330551559b8d2345aec5741797e6280a744ac08148c52bbc0dfea1594"
+    },
+    {
+      "path": "src/fml_formats/PsychBehaviorPlan.hpp",
+      "size": 4996,
+      "sha256": "1dae64962d137f92de70df10eb9452f04a664933a202f035878b42afc2be094e"
+    },
+    {
+      "path": "src/fml_formats/PsychBehaviorSource.hpp",
+      "size": 2027,
+      "sha256": "33c66cdf521acf4802678133174494764d3cb46682305b9970ebe8e5b55f0237"
+    },
+    {
+      "path": "src/fml_formats/PsychBundle.hpp",
+      "size": 16198,
+      "sha256": "b1cd708a4044bc7ed08cdbd386012443af69583685982d48600a153c8fb2dd83"
+    },
+    {
+      "path": "src/fml_formats/PsychCompat.cpp",
+      "size": 3993,
+      "sha256": "ded1380c48c096ebed2331bb5832d896ec8d02bc0b8da96f754cb62006935786"
+    },
+    {
+      "path": "src/fml_formats/PsychCompat.hpp",
+      "size": 2211,
+      "sha256": "57f308ef2815588f0d8991073b7c741c237417a68c140446c0fb00d8592fb69e"
+    },
+    {
+      "path": "src/fml_formats/PsychCompatScript.cpp",
+      "size": 132213,
+      "sha256": "a5d94cbacafe087bfa763c6dfa64828ceeb9ada27c51b8e3eff57cddd0e39732"
+    },
+    {
+      "path": "src/fml_formats/PsychEase.hpp",
+      "size": 2657,
+      "sha256": "6ea1a02901f5147cdacdc62269a709ceaa6055589e1567c4a4461dc022f34504"
+    },
+    {
+      "path": "src/fml_formats/PsychHaxeSource.hpp",
+      "size": 38970,
+      "sha256": "171d69f2350e7c0e163768d8f92636ea2069b86f880043cca2ac1a7402110151"
+    },
+    {
+      "path": "src/fml_formats/PsychHooks.hpp",
+      "size": 10002,
+      "sha256": "1c80ae7ccbb9f05591d0ecfca73c3fb6d57f15fea539c873764a29c762ece2f4"
+    },
+    {
+      "path": "src/fml_formats/PsychScriptDependencies.hpp",
+      "size": 3819,
+      "sha256": "941f0d4761ecb8304e78f2eaeeb787d63138fc0321c4e704f8cbc3e3ed9fff25"
+    },
+    {
+      "path": "src/fml_formats/PsychScriptLibrary.hpp",
+      "size": 6448,
+      "sha256": "230a242efd7aec7688fa795479911f61f80eee646057724ccd7135beabb6c560"
+    },
+    {
+      "path": "src/fml_formats/PsychScriptRelations.hpp",
+      "size": 5125,
+      "sha256": "09f76e9d9741091f682cdb12a7b787473c65c8722d7310c6843b424f1a799061"
+    },
+    {
+      "path": "src/fml_formats/PsychSongAudio.hpp",
+      "size": 3301,
+      "sha256": "df0386584ccfb9f9625488351cb50a4a9a961b9873efb77ac7d779f098753057"
+    },
+    {
+      "path": "src/fml_formats/PsychSource.hpp",
+      "size": 16785,
+      "sha256": "668ac846c5aff86985eae2ea27e81984713d03b609efda914996e1c36bd4a449"
+    },
+    {
+      "path": "src/fml_formats/PsychSourceBinding.hpp",
+      "size": 2893,
+      "sha256": "871da6bf638f40e3ab1c9f95336db2c6709e2a140665a9fa2509ae72f4c64b37"
+    },
+    {
+      "path": "src/fml_formats/PsychStage.hpp",
+      "size": 5038,
+      "sha256": "59c32c2b41a461bdbe8147a3f474acc1136582d55cc8f98ba359c5bc8d8f49c9"
+    },
+    {
+      "path": "src/fml_formats/psych-compat/fml-psych-compat.hx",
+      "size": 131500,
+      "sha256": "b30456aa5755499fd04ee1467823f732645238b92711937f91dc8d0b57a2c574"
+    },
+    {
+      "path": "src/fml_io/SafeWrite.cpp",
+      "size": 32785,
+      "sha256": "b8164abe4de15636ee8ca3df49b2e9b51e2576e151f98ad821b8a3c07fc71a99"
+    },
+    {
+      "path": "src/fml_io/SafeWrite.hpp",
+      "size": 5148,
+      "sha256": "74bb42684e3f122b7d634b637e125f2bd60906a0ad3c9b53122bafc0aa9a0e1f"
+    },
+    {
+      "path": "third_party/json.hpp",
+      "size": 1039546,
+      "sha256": "086ee65083883e83d916160d1545db748925b421aa72b59a1cbfc5b65521896a"
+    },
+    {
+      "path": "third_party/pugiconfig.hpp",
+      "size": 3060,
+      "sha256": "e6c51fbc9a765608bd214ea47d229d3bbd6b650036cdffc94b96b498c202495c"
+    },
+    {
+      "path": "third_party/pugixml.hpp",
+      "size": 57223,
+      "sha256": "0b7c94701df3d50981ffafe57f177c77b940e347c6e5d01073e4161f61299212"
+    },
+    {
+      "path": "tools/embed_compat.py",
+      "size": 2385,
+      "sha256": "aaa663593a1d496a623b4d61489738bfaea3fc4cd7f10b545c12f9561ecb209e"
+    }
+  ]
+}
