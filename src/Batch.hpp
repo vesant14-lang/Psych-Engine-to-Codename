@@ -401,10 +401,9 @@ inline WholeMod wholeModSelection(const Catalog& catalog,const fs::path& base,co
     return out;
 }
 // --- Partial export ------------------------------------------------------------
-// Not everything can be fixed from the importer. A partial export writes what
-// is sound and leaves out what blocks, each with its reason, the way a batch
-// already leaves out an item that cannot be exported. Only a plan without
-// destination, inside its own sources or with nothing left stays blocked.
+// Exports valid resources while skipping those that cannot be processed.
+// Each skipped resource is reported with its reason.
+// Structural errors, invalid destinations, and empty exports remain blocked.
 inline bool structuralError(const std::string& e) {
     return e=="Elige una carpeta de destino existente." || e.rfind("El destino debe estar separado",0)==0 ||
            e=="Selecciona al menos un recurso." || e=="ID de canción inválido." || e=="Ya existe esa canción. Usa otro ID." ||
