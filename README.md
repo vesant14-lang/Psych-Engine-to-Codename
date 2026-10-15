@@ -12,7 +12,7 @@ Version 1.0.1 | Windows 10 / 11, x64 | English and Spanish interface | MIT licen
 |---|---|
 | Convert assets on Windows | `PsychImporter-1.0.1-Windows-x64.zip` |
 | Build or modify the program | `PsychImporter-1.0.1-Developer.zip` or the source repository |
-| Check the target format and tested versions | [Codename compatibility](PsychImporterStandalone/CODENAME_COMPATIBILITY.md) |
+| Check the target format and tested versions | [Codename compatibility](CODENAME_COMPATIBILITY.md) |
 | Work on the code | `DEVELOPMENT.md` in the source edition |
 | Explore the unfinished FML script connection | `WIP/FMLScriptConnection/` in the source edition |
 
@@ -149,7 +149,7 @@ If several sources share an identifier, `id@1` selects the second catalog entry.
 
 ## Compatibility and current limits
 
-Codename Engine 1.0.1 is the reference target. See [CODENAME_COMPATIBILITY.md](PsychImporterStandalone/CODENAME_COMPATIBILITY.md) for the tested contracts, engine checks and limits of that validation.
+Codename Engine 1.0.1 is the reference target. See [CODENAME_COMPATIBILITY.md](CODENAME_COMPATIBILITY.md) for the tested contracts, engine checks and limits of that validation.
 
 - Charts is read-only in 1.0.1.
 - Preview has no gameplay HUD in either edition.
@@ -179,10 +179,10 @@ The build finds MSVC through `setup_msvc.bat`. The source edition includes the r
 
 Keep format and rendering fixes in the shared FML core. Keep the standalone's layout and preferences in its frontend. Include a reproducible case, the validation performed and any remaining behavior differences when proposing a change.
 
-Read the [contribution guide](PsychImporterStandalone/CONTRIBUTING.md), [release history](PsychImporterStandalone/CHANGELOG.md) and [issue-reporting notes](PsychImporterStandalone/SECURITY.md) for the repository workflow.
+Read the [contribution guide](CONTRIBUTING.md), [release history](CHANGELOG.md) and [issue-reporting notes](SECURITY.md) for the repository workflow.
 
 ## License and acknowledgements
 
-The tool's original code is available under the [MIT license](PsychImporterStandalone/LICENSE). Codename Engine and Psych Engine use Apache 2.0; upstream-derived portions retain those terms and attribution. The MIT license does not replace their licenses. Read [third-party notices](PsychImporterStandalone/THIRD_PARTY_NOTICES.md) for the adaptation scope and included license records.
+The tool's original code is available under the [MIT license](LICENSE). Codename Engine and Psych Engine use Apache 2.0; upstream-derived portions retain those terms and attribution. The MIT license does not replace their licenses. Read [third-party notices](THIRD_PARTY_NOTICES.md) for the adaptation scope and included license records.
 
 Psych Importer also uses SDL3, Dear ImGui, pugixml, miniz, nlohmann/json, stb and miniaudio. Both editions include the relevant licenses and attribution. Imported mod assets keep their original ownership and permissions.
