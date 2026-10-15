@@ -154,14 +154,11 @@ private:
         return false;
     }
 
-    // Lo que no se puede emitir se ESCRIBE igualmente, comentado y con su
-    // linea. Un archivo con un hueco marcado se puede terminar a mano; uno con
-    // el hueco borrado, no: nadie sabe que falta.
+    
     void pending(int depth, int line, const std::string& what) {
         m_out.source += indent(depth) + "// PENDIENTE (linea " +
                         std::to_string(line) + "): " + what + "\n";
-        // El original, tal cual lo escribio el mod. Sin esto hay que abrir el
-        // otro archivo y contar lineas para saber siquiera que falta.
+      
         const std::string original = sourceLine(line);
         if (!original.empty())
             m_out.source += indent(depth) + "//   original: " + original + "\n";
@@ -286,9 +283,7 @@ private:
             return false;
         const std::string& op = node.text;
 
-        // La trampa numero uno: en Lua `..` concatena numeros; en Haxe `+` los
-        // suma. `'bar'..i` tiene que dar "bar7", no un error de tipos ni una
-        // suma silenciosa.
+       
         if (op == "..") {
             out = "(Std.string(" + a + ") + Std.string(" + b + "))";
             return true;
@@ -447,11 +442,7 @@ private:
             out = path;
             return true;
         }
-        // ---- texto -----------------------------------------------------
-        // Psych no crea un FlxText pelado: le pone vcr.ttf blanco centrado con
-        // borde negro y lo manda a camHUD (`TextFunctions.hx:12-15`). Emitir
-        // solo el `new FlxText` daria un texto con otra fuente y en otra
-        // camara, que es "parecido" y por tanto peor que nada.
+      
         if (name == "makeLuaText" && args.size() >= 5 && literalFirst) {
             if (!isIdentifier(first->text)) return false;
             const std::string tag = first->text;
@@ -594,12 +585,7 @@ private:
             return true;
         }
 
-        // ---- eventos del chart ---------------------------------------------
-        // `triggerEvent` parecia necesitar el modelo de eventos entero, y no:
-        // de sus 324 llamadas en el corpus, 314 son UN evento -"Camera Follow
-        // Pos"-. Y su equivalente no es una imitacion: `camFollow` es el objeto
-        // que la camara de Codename sigue (`PlayState.hx:194`, `:867`), y sus
-        // propios eventos de camara lo mueven exactamente asi (`:1522`,`:1629`).
+       
         if (name == "triggerEvent" && args.size() >= 1 && literalFirst) {
             if (first->text != "Camera Follow Pos") return false;
             if (args.size() < 3) return false;
